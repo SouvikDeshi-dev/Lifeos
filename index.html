@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>LifeOS | Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="logo">Life<span>OS</span></h2>
+
+        <nav>
+            <a href="#dashboard">🏠 Dashboard</a>
+            <a href="#tasks">✅ Tasks</a>
+            <a href="#study">📚 Study Planner</a>
+            <a href="#habits">🔥 Habits</a>
+            <a href="#expenses">💰 Expenses</a>
+            <a href="#notes">📝 Notes</a>
+        </nav>
+
+        <button id="themeBtn" class="theme-btn">🌙 Toggle Theme</button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1 id="greeting">Welcome to LifeOS!</h1>
+                <p>Your life, organized in one place.</p>
+            </div>
+            <div class="date" id="currentDate"></div>
+        </header>
+
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+
+            <div class="stats">
+                <div class="card">
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <p>Completed Tasks</p>
+                    <h2 id="completedTasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <p>Study Hours</p>
+                    <h2 id="studyHours">0</h2>
+                </div>
+
+                <div class="card">
+                    <p>Total Expenses</p>
+                    <h2 id="totalExpenses">₹0</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="tasks" class="panel">
+            <h2>✅ Task Manager</h2>
+
+            <form id="taskForm" class="input-row">
+                <input id="taskInput"
+                       type="text"
+                       placeholder="Enter a task..."
+                       required>
+                <button type="submit">Add Task</button>
+            </form>
+
+            <ul id="taskList" class="list"></ul>
+        </section>
+
+        <section id="study" class="panel">
+            <h2>📚 Study Tracker</h2>
+
+            <form id="studyForm" class="input-row">
+                <input id="subjectInput"
+                       type="text"
+                       placeholder="Subject name"
+                       required>
+
+                <input id="hoursInput"
+                       type="number"
+                       min="0.1"
+                       max="24"
+                       step="0.1"
+                       placeholder="Hours"
+                       required>
+
+                <button type="submit">Save</button>
+            </form>
+
+            <ul id="studyList" class="list"></ul>
+        </section>
+
+        <section id="habits" class="panel">
+            <h2>🔥 Daily Habits</h2>
+
+            <form id="habitForm" class="input-row">
+                <input id="habitInput"
+                       type="text"
+                       placeholder="Example: Read for 30 minutes"
+                       required>
+                <button type="submit">Add Habit</button>
+            </form>
+
+            <ul id="habitList" class="list"></ul>
+        </section>
+
+        <section id="expenses" class="panel">
+            <h2>💰 Expense Tracker</h2>
+
+            <form id="expenseForm" class="input-row">
+                <input id="expenseName"
+                       type="text"
+                       placeholder="Expense name"
+                       required>
+
+                <input id="expenseAmount"
+                       type="number"
+                       min="0.01"
+                       step="0.01"
+                       placeholder="Amount ₹"
+                       required>
+
+                <button type="submit">Add Expense</button>
+            </form>
+
+            <ul id="expenseList" class="list"></ul>
+        </section>
+
+        <section id="notes" class="panel">
+            <h2>📝 Quick Notes</h2>
+
+            <textarea id="noteInput"
+                      placeholder="Write your notes here..."></textarea>
+
+            <button id="saveNote">Save Notes</button>
+            <p id="noteStatus" class="status"></p>
+        </section>
+
+        <footer>
+            <p>LifeOS © <span id="year"></span> | Build a better everyday.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+  </html>
